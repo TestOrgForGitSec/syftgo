@@ -221,14 +221,14 @@ func (c *Consumer) Use(middleware ...MiddlewareFunc) {
 	for _, m := range middleware {
 		found := false
 		for _, im := range c.middlewares {
-			if &im == &m {
-				found = true
-				break
-			}
-		}
-		if !found {
-			c.middlewares = append(c.middlewares, m)
-		}
+//			if &im == &m {
+//				found = true
+//				break
+//			}
+//		}
+//		if !found {
+//			c.middlewares = append(c.middlewares, m)
+//		}
 	}
 }
 
