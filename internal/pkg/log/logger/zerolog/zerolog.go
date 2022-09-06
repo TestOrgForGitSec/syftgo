@@ -78,26 +78,26 @@ func newLogger(config *logger.Config) (zerolog.Logger, error) {
 		})
 	}
 
-	// set writer to file if config.LogFile is not empty
-	if config.LogFile != "" {
-		err := os.MkdirAll(filepath.Dir(config.LogFile), 0755)
-		if err != nil {
-			return zerolog.Logger{}, err
-		}
-		file, err := os.OpenFile(config.LogFile, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
-		if err != nil {
-			return zerolog.Logger{}, err
-		}
-		writers = zerolog.MultiLevelWriter(writers, file)
-	}
+	///*// set writer to file if config.LogFile is not empty
+	//if config.LogFile != "" {
+	//	err := os.MkdirAll(filepath.Dir(config.LogFile), 0755)
+	//	if err != nil {
+	//		return zerolog.Logger{}, err
+	//	}
+		//file, err := os.OpenFile(config.LogFile, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
+		//if err != nil {
+			//return zerolog.Logger{}, err
+		//}
+		//writers = zerolog.MultiLevelWriter(writers, file)
+	//}
 
-	lgr := zerolog.New(writers)
-	lgr = setLevel(lgr, config.Level)
-	if config.Caller {
-		lgr = lgr.With().Caller().Logger()
-	}
-	return lgr, nil
-}
+	//lgr := zerolog.New(writers)
+	//lgr = setLevel(lgr, config.Level)
+	//if config.Caller {
+		//lgr = lgr.With().Caller().Logger()
+	//}
+	//return lgr, nil
+//} 
 
 // SetConfig to set a new logger configuration
 func (l *Logger) SetConfig(config *logger.Config) error {
