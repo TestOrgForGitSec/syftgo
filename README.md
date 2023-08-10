@@ -1,6 +1,6 @@
 # Kothak
 
-Kothak is a repository design project for Go. test123 . test Demo
+Kothak is a repository design project for Go. test123 . test 
 
 > Please fell free to critize my ideas and writings. I am using this repo to validate my ideas and learn how to write technical topics.
 
